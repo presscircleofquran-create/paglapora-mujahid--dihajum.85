@@ -1,0 +1,37 @@
+/* রং, মাপ, ফন্ট — ছবি থেকে পিক্সেল মেপে নেওয়া (ডার্ক = স্ক্রিনশটের হুবহু) */
+@font-face{font-family:"Hind Siliguri";font-weight:400;font-display:swap;src:url(../fonts/hind-Regular.woff) format("woff")}
+@font-face{font-family:"Hind Siliguri";font-weight:700;font-display:swap;src:url(../fonts/hind-Bold.woff) format("woff")}
+:root{
+  --font:"Hind Siliguri","Noto Sans Bengali","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  /* ডার্ক */
+  --bg:#131f24;          /* পেছন */
+  --field:#202f36;       /* ইনপুট বক্সের ভেতর */
+  --line:#37464f;        /* বর্ডার + নিচের ছায়া (আউটলাইন বাটন/ইনপুট) */
+  --muted:#52656d;       /* ছোট ধূসর লেখা, "অথবা", আইকন */
+  --text:#f1f7fb;        /* শিরোনাম */
+  --soft:#dce6ec;        /* প্লেসহোল্ডার ও বর্ণনা */
+  --blue:#49c0f8;        /* আকাশি */
+  --blue-d:#1899d6;      /* আকাশির নিচের গাঢ় ছায়া */
+  --on-blue:#131f24;     /* আকাশি বাটনের লেখা */
+  --off-bg:#37464f;      /* নিষ্ক্রিয় বাটন */
+  --off-tx:#52656d;
+  --err:#ff6b6b;
+  --purple:#cd7cf8;
+  /* মাপ (ডেস্কটপ) */
+  --h:3rem;              /* বক্স/বাটনের উচ্চতা 48px */
+  --r:.875rem;           /* কোণ 14px */
+  --shade:.25rem;        /* আকাশি বাটনের ছায়া 4px */
+  --shade2:.125rem;      /* আউটলাইনের নিচের বাড়তি ছায়া 2px */
+  --gap:1.5rem;          /* বাটন থেকে বাটন */
+  --col:25.8rem;         /* কলামের চওড়া ≈ 413px */
+  --fs-title:2.11rem; --fs-field:1.64rem; --fs-btn:1.32rem; --fs-out:1.23rem; --fs-hint:1.38rem; --fs-legal:1rem; --fs-or:1rem; --fs-forgot:1.05rem;
+}
+:root[data-theme=light]{
+  --bg:#fff; --field:#f7f7f7; --line:#e5e5e5; --muted:#afafaf; --text:#3c3c3c; --soft:#4b4b4b;
+  --blue:#1cb0f6; --blue-d:#1899d6; --on-blue:#fff; --off-bg:#e5e5e5; --off-tx:#afafaf; --err:#ea2b2b; --purple:#cd7cf8;
+}
+@media (max-width:37.4375em){:root{ /* ফোন: বক্স ≈ ০.৯২×, লেখা ≈ ০.৮৬× */
+  --h:2.75rem; --r:.8125rem; --shade:.1875rem; --gap:1.25rem; --col:20.75rem;
+  --fs-title:1.86rem; --fs-field:1.4rem; --fs-btn:1.13rem; --fs-out:1.07rem; --fs-hint:1.2rem; --fs-legal:.9rem; --fs-or:.88rem; --fs-forgot:.92rem; }}
+@media (min-width:2200px){html{font-size:20px}}
+@media (min-width:3000px){html{font-size:28px}}

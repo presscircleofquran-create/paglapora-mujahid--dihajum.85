@@ -1,0 +1,66 @@
+/* লেসন কমপ্লিট ও প্রোফাইল-তৈরি পাতা (ডার্ক) */
+.fin-rs,.fin-sv{height:100vh;height:100dvh;display:flex;flex-direction:column;background:var(--bg);overflow:hidden;position:relative}
+.fin-rs[hidden],.fin-sv[hidden]{display:none}
+.rs-main{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 1.25rem}
+.rs-fx{flex:none;width:min(21rem,100%);height:5.2rem}
+.rs-t{margin:0 0 1.4rem;color:#ffc800;font-size:2.1rem;line-height:1.2;text-align:center;font-weight:700;animation:rspop .55s cubic-bezier(.2,1.4,.4,1) .1s backwards}
+.rs-box{position:relative;width:min(21rem,100%);margin-bottom:1.1rem;animation:rsbox .5s ease-out var(--d) backwards}
+.rs-box.xpc{--c:#92d336;--d:.4s;--hd:1.9s}.rs-box.xpt{--c:#ffc800;--d:2.1s;--hd:2.8s}.rs-box.xtm{--c:#49c0f8;--d:3s;--hd:4.55s;margin-bottom:0}
+.rs-h{position:relative;z-index:0;height:3.5rem;margin-bottom:-1.1rem;padding-bottom:1.1rem;border-radius:1.3rem 1.3rem 0 0;background:var(--c);display:flex;align-items:center;justify-content:center;color:#131f24;font-weight:700;font-size:1.15rem;animation:rsband .5s cubic-bezier(.2,.9,.3,1.15) var(--hd) backwards}
+.rs-v{position:relative;z-index:1;height:5.6rem;border-radius:1.05rem;border:3px solid var(--c);background:var(--bg);display:flex;align-items:center;justify-content:center;gap:.7rem;color:var(--c);font-weight:700;font-size:2.1rem}
+.rs-v b{font-variant-numeric:tabular-nums;font-weight:700}
+.rs-v svg{height:2.6rem;width:auto;display:block}
+.rs-box.xpc .rs-v svg{height:2.9rem}
+.rs-foot{flex:none;padding:1rem 1rem calc(1rem + env(safe-area-inset-bottom))}
+.rs-fin{max-width:64rem;margin:0 auto;display:flex;flex-direction:column-reverse;gap:.7rem}
+.fin-rs.still .rs-t,.fin-rs.still .rs-box,.fin-rs.still .rs-h{animation:none}
+@keyframes rspop{0%{transform:scale(.5);opacity:0}100%{transform:none;opacity:1}}
+@keyframes rsbox{0%{transform:translateY(1.4rem) scale(.96);opacity:0}100%{transform:none;opacity:1}}
+@keyframes rsband{0%{transform:translateY(1.9rem);opacity:0}45%{opacity:.7}100%{transform:none;opacity:1}}
+.rs-b{position:absolute;width:0;height:0;pointer-events:none;transform:scale(calc(var(--s,1) * 1.5))}
+.rs-b i{position:absolute;left:-1px;top:-1px;width:3px;height:14px;border-radius:2px;transform-origin:1px 1px;transform:rotate(var(--a)) translateY(5px) scaleY(.3);opacity:0;animation:rsb .9s ease-out forwards}
+@keyframes rsb{0%{transform:rotate(var(--a)) translateY(4px) scaleY(.3);opacity:0}18%{opacity:1}100%{transform:rotate(var(--a)) translateY(38px) scaleY(.8);opacity:0}}
+@media (min-width:44em){
+  .rs-main{padding-bottom:3rem}
+  .rs-fx{height:7rem}
+  .rs-t{font-size:2.5rem}
+  .rs-box{width:24rem}
+  .rs-h{height:3.9rem;font-size:1.25rem}.rs-v{height:6.2rem;font-size:2.4rem}
+  .rs-foot{border-top:2px solid var(--line);padding:1.5rem 1.5rem 1.7rem}
+  .rs-fin{flex-direction:row;justify-content:space-between}
+  .rs-fin .btn{width:auto;min-width:11.5rem;padding-inline:1.6rem}
+}
+@media (max-height:760px){.rs-fx{height:4.2rem}.rs-t{font-size:1.8rem;margin-bottom:1rem}.rs-v{height:4.6rem}.rs-h{height:3.1rem;padding-bottom:1.1rem}.rs-box{margin-bottom:.8rem}}
+@media (max-height:600px){.rs-fx{height:2.6rem}.rs-t{font-size:1.5rem;margin-bottom:.7rem}.rs-v{height:3.7rem;font-size:1.7rem}.rs-v svg{height:2rem!important}.rs-h{height:2.6rem;font-size:1rem}.rs-box{margin-bottom:.6rem}}
+/* প্রোফাইল তৈরি */
+.sv-in{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem 1.25rem 2rem;text-align:center}
+.sv-art{width:11rem;height:12.8rem;margin-bottom:1.6rem}
+.sv-art svg{width:100%;height:100%;display:block;overflow:visible}
+.sv-ph{animation:svfl 2.6s ease-in-out infinite}
+.sv-sh{transform-origin:90px 196px;animation:svsh 2.6s ease-in-out infinite}
+.fin-sv .cf{animation:svcf 3.2s ease-in-out infinite}.fin-sv .c2{animation-delay:-.8s}.fin-sv .c3{animation-delay:-1.6s}.fin-sv .c4{animation-delay:-2.2s}
+@keyframes svfl{0%,100%{transform:translateY(8px)}50%{transform:translateY(-12px)}}
+@keyframes svsh{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(.72);opacity:.16}}
+@keyframes svcf{0%,100%{translate:0 0;opacity:1}50%{translate:2px -6px;opacity:.55}}
+.sv-t{margin:0 0 .8rem;color:var(--text);font-size:1.7rem;line-height:1.3;max-width:42rem}
+.sv-x{margin:0 0 1.8rem;color:var(--soft);font-size:1.05rem;line-height:1.5;max-width:44rem}
+.sv-b{width:min(100%,20.5rem);display:flex;flex-direction:column;gap:.8rem}
+@media (min-width:44em){.sv-t{font-size:2rem}.sv-x{font-size:1.15rem}.sv-art{width:12.5rem;height:14.5rem}}
+@media (max-height:640px){.sv-art{height:8.5rem;width:7.3rem;margin-bottom:.8rem}.sv-x{margin-bottom:1rem}}
+html[data-rtl] :is(.rs-t,.rs-h,.sv-t,.sv-x,.rs-fin .btn,.sv-b .btn){direction:rtl;unicode-bidi:isolate}
+@media (prefers-reduced-motion:reduce){.fin-rs *,.fin-sv *{animation:none!important}}
+
+.rs-cv{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.rs-main,.rs-foot{position:relative;z-index:1}
+
+/* আইকন অ্যানিমেশন */
+.tg-all,.ck-h{transform-box:view-box}
+.tg-all{transform-origin:15px 19px;animation:tgall 1.35s ease-out calc(var(--d) + .1s) backwards}
+.tg-a{animation:tga 1.35s ease-in calc(var(--d) + .1s) backwards}
+.ck-h{transform-origin:17px 17px;animation:ckh 1.5s cubic-bezier(.25,.7,.25,1) calc(var(--d) + .1s) backwards}
+.xpt .rs-v svg{transform-origin:50% 55%;animation:bzp .55s cubic-bezier(.2,1.4,.4,1) calc(var(--d) + .1s) backwards}
+@keyframes tgall{0%{transform:translateY(10px);opacity:0}22%{transform:translateY(-4px);opacity:1}34%{transform:translateY(0)}52%{transform:scale(1)}58%{transform:scale(.78)}72%{transform:scale(1.12)}86%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes tga{0%,34%{transform:translate(17px,-17px);opacity:0}40%{opacity:1}54%,100%{transform:none;opacity:1}}
+@keyframes ckh{0%{transform:rotate(-470deg)}100%{transform:rotate(0)}}
+@keyframes bzp{0%{transform:scale(0) rotate(-25deg)}55%{transform:scale(1.25) rotate(6deg)}100%{transform:none}}
+.fin-rs.still :is(.tg-all,.tg-a,.ck-h,.rs-v svg){animation:none!important}

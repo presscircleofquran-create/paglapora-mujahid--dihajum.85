@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#131f24">
+<title>পাগলা পড়া · paglapora</title>
+<script src="js/boot.js"></script>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/onboard.css">
+<link rel="stylesheet" href="css/practice.css">
+<link rel="stylesheet" href="css/finish.css">
+</head>
+<body>
+<div class="intro" id="intro" aria-hidden="true" data-notr><div class="wordmark" id="intro-wm"></div></div>
+<div class="auth" id="auth">
+
+  <button class="ico-btn" id="close" type="button" aria-label="বন্ধ করুন" hidden></button>
+  <button class="ico-btn" id="back" type="button" aria-label="পেছনে যান" hidden></button>
+  <button class="top-btn btn btn-outline" id="topbtn" type="button" hidden></button>
+
+  <!-- ০) শুরুর পাতা -->
+  <section class="view ob ob-start" id="v-start" hidden aria-labelledby="t-start">
+    <header class="st-top"><h1 class="wordmark" id="t-start" data-notr></h1></header>
+    <div class="st-art" id="st-art" aria-hidden="true"></div>
+    <p class="ob-tag st-tag" data-notr>পাগলের মতো পড়ো,<br>মজা করে শেখো,<br>রোজ একটু এগিয়ে যাও!</p>
+    <div class="ob-foot"><div class="ob-foot-in stack">
+      <button class="btn btn-primary" id="s-go" type="button">শুরু করুন</button>
+      <button class="btn btn-outline" id="s-have" type="button">আমার আগে থেকেই অ্যাকাউন্ট আছে</button>
+    </div></div>
+  </section>
+
+  <!-- ০ক) শুরুর ধাপগুলো (ভাষা, বই, স্তর, লক্ষ্য, প্রস্তুত) -->
+  <section class="view ob ob-step" id="v-step" hidden aria-label="শুরুর ধাপ">
+    <header class="ob-head">
+      <button class="ob-back" id="ob-back" type="button" aria-label="পেছনে যান"></button>
+      <div class="ob-prog" role="progressbar" aria-valuemin="0" aria-valuemax="100"><i id="ob-bar"></i></div>
+    </header>
+    <div class="ob-say" id="ob-say" data-notr><span class="say-bk" id="say-bk"></span><div class="bubble" id="ob-bubble" role="status"><svg class="b-bg" aria-hidden="true" focusable="false"><path d=""/></svg><span class="gh"></span><span class="ty"></span></div></div>
+    <div class="ob-scroll">
+      <div class="ob-site" data-notr></div>
+      <h2 class="ob-h" id="ob-h">আমি শিখতে চাই...</h2>
+      <div class="ob-body" id="ob-body" data-notr></div>
+    </div>
+    <div class="ob-foot"><div class="ob-foot-in"><button class="btn btn-primary" id="ob-next" type="button" disabled>চালিয়ে যান</button></div></div>
+  </section>
+
+  <!-- ১) লগ ইন -->
+  <section class="view" id="v-login" hidden aria-labelledby="t-login">
+    <div class="col">
+      <h1 class="title" id="t-login">লগ ইন করুন</h1>
+      <form class="stack" id="f-login" novalidate>
+        <input class="field" id="l-email" type="text" inputmode="email" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ইমেইল" aria-label="ইমেইল">
+        <div class="field-wrap">
+          <input class="field" id="l-pass" type="password" autocomplete="current-password" placeholder="পাসওয়ার্ড" aria-label="পাসওয়ার্ড">
+          <button class="forgot" id="forgot" type="button">মনে নেই?</button>
+        </div>
+        <p class="err" id="l-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">লগ ইন করুন</button>
+      </form>
+      <div class="or"><span>অথবা</span></div>
+      <div class="stack soc"><button class="btn btn-outline btn-google" data-oauth="google" type="button"><i class="g-ico"></i><span>Google দিয়ে সাইন ইন করুন</span></button></div>
+      <div class="legal" data-legal></div>
+    </div>
+  </section>
+
+  <!-- অনুশীলন (ডেমো) -->
+  <section class="view pr" id="v-practice" hidden aria-label="অনুশীলন"></section>
+
+  <section class="view fin-rs" id="v-result" hidden aria-label="লেসন কমপ্লিট"></section>
+  <section class="view fin-sv" id="v-save" hidden aria-label="প্রোফাইল তৈরি"></section>
+
+  <!-- ২) বয়স -->
+  <section class="view" id="v-age" hidden aria-labelledby="t-age">
+    <div class="col">
+      <h1 class="title" id="t-age">আপনার বয়স কত?</h1>
+      <form class="stack tight" id="f-age" novalidate>
+        <input class="field" id="a-age" type="text" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="বয়স" aria-label="বয়স" aria-describedby="a-hint">
+        <p class="hint" id="a-hint">আপনার বয়স জানতে পারলে আমরা আপনার পাগলা পড়া ব্যবহারের অভিজ্ঞতাকে আরও উন্নত করতে পারব।</p>
+        <p class="err" id="a-err" role="alert" hidden></p>
+        <button class="btn btn-primary" id="a-next" type="submit" disabled>পরের ধাপে যান</button>
+      </form>
+      <div class="or"><span>অথবা</span></div>
+      <div class="stack soc"><button class="btn btn-outline btn-google" data-oauth="google" type="button"><i class="g-ico"></i><span>Google</span></button></div>
+      <div class="legal" data-legal></div>
+    </div>
+  </section>
+
+  <!-- ৩) বেছে নিন -->
+  <section class="view view-choose" id="v-choose" hidden aria-labelledby="t-choose">
+    <div class="col">
+      <h1 class="title" id="t-choose">পরের ধাপে যেতে যে কোনও<br>একটি বেছে নিন!</h1>
+      <div class="slot" id="logo-slot" aria-hidden="true"></div>
+      <div class="stack">
+        <button class="btn btn-outline btn-google" data-oauth="google" type="button"><i class="g-ico"></i><span>Google-এর সাহায্যে অ্যাকাউন্ট খুলুন</span></button>
+        
+        <button class="btn btn-outline btn-mail" id="c-mail" type="button"><i class="m-ico"></i><span>ইমেইল দিয়ে চালিয়ে যান</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ৪) ইমেইল দিয়ে অ্যাকাউন্ট -->
+  <section class="view" id="v-email" hidden aria-labelledby="t-email">
+    <div class="col">
+      <h1 class="title" id="t-email">অ্যাকাউন্ট তৈরি করুন</h1>
+      <form class="stack" id="f-email" novalidate>
+        <input class="field" id="e-name" type="text" autocomplete="name" maxlength="40" placeholder="নাম" aria-label="নাম">
+        <input class="field" id="e-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="মোবাইল নম্বর (01XXXXXXXXX)" aria-label="মোবাইল নম্বর">
+        <input class="field" id="e-inst" type="text" autocomplete="organization" maxlength="80" placeholder="প্রতিষ্ঠানের নাম (স্কুল / মাদরাসা)" aria-label="প্রতিষ্ঠান">
+        <input class="field" id="e-mail" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="ইমেইল" aria-label="ইমেইল">
+        <div class="field-wrap eyed"><input class="field" id="e-pass" type="password" autocomplete="new-password" maxlength="64" placeholder="পাসওয়ার্ড" aria-label="পাসওয়ার্ড"><button class="eye" type="button" aria-label="পাসওয়ার্ড দেখান"></button></div>
+        <div id="e-pw-ui"></div>
+        <p class="err" id="e-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">অ্যাকাউন্ট তৈরি করুন</button>
+      </form>
+      <div class="legal" data-legal></div>
+    </div>
+  </section>
+
+  <!-- ৫) পাসওয়ার্ড ভুলে গিয়েছি -->
+  <section class="view" id="v-forgot" hidden aria-labelledby="t-forgot">
+    <div class="col">
+      <h1 class="title tight-t" id="t-forgot">পাসওয়ার্ড ভুলে গিয়েছি</h1>
+      <p class="sub">আপনার ইমেইল দিন — আমরা একটি লিংক পাঠাব। সেই লিংকে ক্লিক করে নতুন পাসওয়ার্ড বানাতে পারবেন।</p>
+      <form class="stack tight2" id="f-forgot" novalidate>
+        <input class="field" id="f-mail" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="ইমেইল" aria-label="ইমেইল">
+        <p class="err" id="f-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">জমা দিন</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ৬) নতুন পাসওয়ার্ড (রিসেট লিংক থেকে এলে) -->
+  <section class="view" id="v-reset" hidden aria-labelledby="t-reset">
+    <div class="col">
+      <h1 class="title" id="t-reset">পাসওয়ার্ড রিসেট করুন</h1>
+      <form class="stack" id="f-reset" novalidate>
+        <div class="field-wrap eyed"><input class="field" id="r-pass" type="password" autocomplete="new-password" maxlength="64" placeholder="নতুন পাসওয়ার্ড" aria-label="নতুন পাসওয়ার্ড"><button class="eye" type="button" aria-label="পাসওয়ার্ড দেখান"></button></div>
+        <div class="field-wrap eyed"><input class="field" id="r-pass2" type="password" autocomplete="new-password" maxlength="64" placeholder="নতুন পাসওয়ার্ড কনফার্ম করুন" aria-label="নতুন পাসওয়ার্ড কনফার্ম করুন"><button class="eye" type="button" aria-label="পাসওয়ার্ড দেখান"></button></div>
+        <div id="r-pw-ui"></div>
+        <p class="err" id="r-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">জমা দিন</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ৬ক) ইমেইলের কোড (OTP) -->
+  <section class="view" id="v-otp" hidden aria-labelledby="t-otp">
+    <div class="col">
+      <div class="mail-hero">
+      <svg class="mail-art" viewBox="0 0 240 190" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="sh1" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+          <clipPath id="cl1"><rect x="46" y="62" width="148" height="98" rx="15"/></clipPath>
+        </defs>
+        <ellipse class="m-ground" cx="120" cy="170" rx="64" ry="10" fill="url(#sh1)"/>
+        <g class="m-float">
+          <g transform="rotate(-9 120 108)">
+            <rect x="46" y="62" width="148" height="98" rx="15" fill="#1899d6"/>
+            <g clip-path="url(#cl1)">
+              <path d="M40 166L106 106M200 166L134 106" stroke="#49c0f8" stroke-width="5" opacity=".5"/>
+              <path d="M40 50H200V82L128 131Q120 136 112 131L40 82Z" fill="#49c0f8"/>
+              <path d="M44 84L112 131Q120 136 128 131L196 84" fill="none" stroke="#1488c2" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+              <rect x="62" y="70" width="34" height="6" rx="3" fill="#fff" opacity=".5"/>
+            </g>
+          </g>
+        </g>
+        <path class="m-sp s1" d="M206 36l8 10-8 10-8-10z" fill="#ffd23f"/>
+        <path class="m-sp s2" d="M30 60l5 6-5 6-5-6z" fill="#9bdcff"/>
+        <path class="m-sp s3" d="M214 128l5 6-5 6-5-6z" fill="#ffb3c1"/>
+        <path class="m-sp s2" d="M34 124l4 5-4 5-4-5z" fill="#ffd23f"/>
+      </svg>
+      </div>
+      <h1 class="title tight-t" id="t-otp">ইমেইল চেক করুন</h1>
+      <p class="sub" id="o-text"></p>
+      <p class="o-mailrow"><span class="o-mail" id="o-mail"></span></p>
+      
+      <p class="o-resend"><button class="w-other" id="o-resend" type="button">আবার পাঠান</button></p>
+      <p class="o-tip">লিংকে ক্লিক করলেই আপনি ঢুকে যাবেন। ইনবক্সে না পেলে স্প্যাম ফোল্ডার দেখুন।</p>
+    </div>
+  </section>
+
+  <!-- ৬খ) আরও তথ্য (গুগল দিয়ে ঢুকলে) -->
+  <section class="view" id="v-more" hidden aria-labelledby="t-more">
+    <div class="col">
+      <h1 class="title tight-t" id="t-more">আর একটু তথ্য দিন</h1>
+      <p class="sub">মোবাইল নম্বর আর প্রতিষ্ঠানের নাম দিলেই শেষ!</p>
+      <form class="stack tight2" id="f-more" novalidate>
+        <input class="field" id="m-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="মোবাইল নম্বর (01XXXXXXXXX)" aria-label="মোবাইল নম্বর">
+        <input class="field" id="m-inst" type="text" autocomplete="organization" maxlength="80" placeholder="প্রতিষ্ঠানের নাম (স্কুল / মাদরাসা)" aria-label="প্রতিষ্ঠান">
+        <p class="err" id="m-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">চালিয়ে যান</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ৭) সাধারণ বার্তা -->
+  <section class="view" id="v-sent" hidden aria-labelledby="t-sent">
+    <div class="col">
+      <svg class="mail-art" viewBox="0 0 240 190" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="sh2" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+          <clipPath id="cl2"><rect x="46" y="62" width="148" height="98" rx="15"/></clipPath>
+        </defs>
+        <ellipse class="m-ground" cx="120" cy="170" rx="64" ry="10" fill="url(#sh2)"/>
+        <g class="m-float">
+          <g transform="rotate(-9 120 108)">
+            <rect x="46" y="62" width="148" height="98" rx="15" fill="#1899d6"/>
+            <g clip-path="url(#cl2)">
+              <path d="M40 166L106 106M200 166L134 106" stroke="#49c0f8" stroke-width="5" opacity=".5"/>
+              <path d="M40 50H200V82L128 131Q120 136 112 131L40 82Z" fill="#49c0f8"/>
+              <path d="M44 84L112 131Q120 136 128 131L196 84" fill="none" stroke="#1488c2" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+              <rect x="62" y="70" width="34" height="6" rx="3" fill="#fff" opacity=".5"/>
+            </g>
+          </g>
+        </g>
+        <path class="m-sp s1" d="M206 36l8 10-8 10-8-10z" fill="#ffd23f"/>
+        <path class="m-sp s2" d="M30 60l5 6-5 6-5-6z" fill="#9bdcff"/>
+        <path class="m-sp s3" d="M214 128l5 6-5 6-5-6z" fill="#ffb3c1"/>
+        <path class="m-sp s2" d="M34 124l4 5-4 5-4-5z" fill="#ffd23f"/>
+      </svg>
+<h1 class="title tight-t" id="t-sent"></h1>
+      <p class="sub" id="s-text"></p>
+      <div class="stack tight2"><button class="btn btn-primary" id="s-ok" type="button">লগ ইন পাতায় যান</button></div>
+    </div>
+  </section>
+
+  <!-- ৯) আবারও স্বাগতম (আগে লগ ইন করা অ্যাকাউন্ট) -->
+  <section class="view" id="v-welcome" hidden aria-labelledby="t-welcome">
+    <div class="col">
+      <h1 class="title" id="t-welcome">আবারও স্বাগতম!</h1>
+      <div class="avatar" id="w-av" aria-hidden="true"></div>
+      <p class="w-name" id="w-name"></p>
+      <button class="w-other" id="w-other" type="button">অন্য অ্যাকাউন্ট থেকে লগ ইন করুন</button>
+      <div class="stack soc" id="w-google" hidden><button class="btn btn-outline btn-google" data-oauth="google" type="button"><i class="g-ico"></i><span>Google দিয়ে সাইন ইন করুন</span></button></div>
+      <form class="stack" id="f-welcome" novalidate hidden>
+        <div class="field-wrap">
+          <input class="field" id="w-pass" type="password" autocomplete="current-password" placeholder="পাসওয়ার্ড" aria-label="পাসওয়ার্ড">
+          <button class="forgot" id="w-forgot" type="button">মনে নেই?</button>
+        </div>
+        <p class="err" id="w-err" role="alert" hidden></p>
+        <button class="btn btn-primary" type="submit">লগ ইন করুন</button>
+      </form>
+      <div class="legal" data-legal></div>
+    </div>
+  </section>
+
+  <!-- ৮) ভেতরে ঢোকার পর (পরের ধাপে বানানো হবে) -->
+  <section class="view" id="v-home" hidden aria-labelledby="t-home">
+    <div class="col">
+      <h1 class="title tight-t" id="t-home">স্বাগতম!</h1>
+      <p class="sub" id="h-who"></p>
+      <p class="sub soon">অ্যাপের ভেতরের অংশ পরের ধাপে বানানো হবে।</p>
+      <div class="stack tight2"><button class="btn btn-outline" id="h-out" type="button">লগ আউট</button></div>
+    </div>
+  </section>
+
+</div>
+<div class="snack" id="snack" role="status" aria-live="polite" hidden></div>
+<script type="module" src="js/app.js"></script>
+<noscript><p style="padding:1rem;color:#fff">এই অ্যাপ চালাতে জাভাস্ক্রিপ্ট চালু করুন।</p></noscript>
+</body>
+</html>
